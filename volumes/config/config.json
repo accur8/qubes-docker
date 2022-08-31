@@ -1,0 +1,31 @@
+{
+  "baseDatabase": {
+    "id": "base",
+    "jdbcUrl": "jdbc:postgresql://db:5432/qubes",
+    "user": "qubes",
+    "password": "",
+    "initialConnections": 10,
+    "maxConnections": 50,
+    "jdbcLogging": false
+  },
+  "startSyncro": false,
+  "hardcodedUsers": [
+    { "login": "admin", "password": "", "superuser": true }
+  ],
+  "lookAndFeel": {
+    "pageTitleDark": "<span class=\"white-text\",>Accur8</span><span class=\"ahs-lightblue\",>Integr8</span>",
+    "pageTitleLight": "<span style=\"color:#6dabde;\">Accur8</span><span style=\"color:#1c3f75;\">Integr8</span>",
+    "tabTitle": "A8 Integr8",
+    "showPoweredByAccur8": true,
+    "jqtheme": "redmond",
+    "theme": "accur8",
+    "successfulLoginRedirectPath": "/manna.html",
+    "useClassicUI": false
+  },
+  "useGoogleLogin": false,
+  "remoteApi": {
+    "hermes": {
+      "serverUri": "https://hermes.accur8.io"
+    }
+  }
+}

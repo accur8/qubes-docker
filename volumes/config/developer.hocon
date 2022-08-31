@@ -1,0 +1,4 @@
+loom.server.database.id = "base"
+loom.server.database.jdbcUrl = ""
+loom.server.encryptBlobData = true
+loom.server.compressBlobData = true

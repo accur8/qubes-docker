@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:13
+    restart: always
+    env_file: db.env
+    configs:
+      - source: db_init
+        target: /docker-entrypoint-initdb.d/qubes.sql.gz
+    ports:
+      - "5432:5432"
+
+  qubes:
+    image: ghcr.io/accur8/a8-launcher
+    restart: unless-stopped
+    env_file: qubes.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    volumes:
+      - ./volumes/coursier:/root/.cache/coursier
+      - ./volumes/versions:/root/.a8/versions
+      - ./volumes/config:/opt/launcher/config
+      - ./volumes/data:/opt/launcher/data
+      - ./volumes/logs:/opt/launcher/logs
+
+configs:
+  db_init:
+    file: qubes.sql.gz
